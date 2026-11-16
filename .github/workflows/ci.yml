@@ -5,9 +5,10 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ * ]
+#    branches: [ * ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch: # Позволяет запускать вручную из интерфейса GitHub
 
 jobs:
   build:
