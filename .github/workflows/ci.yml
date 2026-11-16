@@ -32,7 +32,7 @@ jobs:
         image: vpovarich/nana-gradle
         tags: v1, latest
         registry: registry-url.io
-        dockerfile: Dockerfile.ci
+        dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
