@@ -36,3 +36,9 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
          
+    - name: Run Gemini CLI
+      uses: google-github-actions/run-gemini-cli@v0
+      env:
+       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      with:
+        prompt: "Send me the build results email to ${{secrets.EMAIL}}"
