@@ -37,8 +37,10 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
          
     - name: Run Gemini CLI
+      if: always()
       uses: google-github-actions/run-gemini-cli@v0
-      env:
-       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       with:
-        prompt: "Send me the build results email to ${{ secrets.EMAIL }}"
+        gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
+        prompt: |
+          Analyze the build status (${{ job.status }}) for image vpovarich/nana-gradle
+          and generate a concise summary report.
