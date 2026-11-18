@@ -41,4 +41,4 @@ jobs:
       env:
        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       with:
-        prompt: "Send me the build results email to ${{secrets.EMAIL}}"
+        prompt: "Send me the build results email to ${{ secrets.EMAIL }}"
